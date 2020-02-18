@@ -1,6 +1,6 @@
 ## React16
 ### react 16 유용한 기능
-
+#
 ### 1. `Fragment` 
 - `Fragment` 를 사용하면 불필요한 `span` 이나 `array`를 사용하지 않아도 되고 `string` 도 `return`이 됨.
   
@@ -10,9 +10,7 @@
     
 - 2개 이상을 리턴하고 싶을 경우 하나의 `component`에 담아야 하거나,  
 `array`를 사용하거나 `span` 태그로 감싸야했기에 불필요한 코드가 많았다.  
-
-
- 
+#
 ### 2. `Portals` 
   
 - `react root` 밖에서 `react`를 `render` 할 수 있도록 해준다.  
@@ -21,6 +19,11 @@
   
 - 다른 페이지에서 로딩을 할 때나 `html` 변경하지 못할 때, 워드프레스 작업,   
 리액트 플러그인을 만들거나 플러그인 안에서 렌더를 할 때 등  
+#
+### 3. `Error Boundaries`
 
-
-
+- `component`로 하여금 `component children`의 `error`를 구분하고 관리할 수 있게 함.
+  
+- 캐치 할 수 있는 component는 App임
+#
+### 4. 
