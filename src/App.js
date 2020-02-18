@@ -1,4 +1,4 @@
-import React, {React, Fragment} from 'react';
+import React, {Component, Fragment} from 'react';
 
 class ReturnTypes extends Component {
     render() {
