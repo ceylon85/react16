@@ -9,6 +9,6 @@
 
 
 2. `Portals`
-- `react root` 밖에 `react`를 `render` 할 수 있도록 해준다.  
+- `react root` 밖에서 `react`를 `render` 할 수 있도록 해준다.  
 - `portal`은 `react dom` 안에 있음.
 - 다른 페이지에서 로딩을 할 때나 `html` 변경하지 못할 때, 워드프에스 작업, 리액트 플러그인을 만들거나 플러그인 안에서 렌더를 할 때 등  
