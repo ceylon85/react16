@@ -24,6 +24,7 @@
 
 - `component`로 하여금 `component children`의 `error`를 구분하고 관리할 수 있게 함.
   
-- 캐치 할 수 있는 component는 App임
+- 캐치 할 수 있는 `component`는 `App`임
 #
 ### 4. 
+- HOC(Higher-Order-Component)
