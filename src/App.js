@@ -1,7 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import {createPortal} from 'react-dom';
 
-const BoundaryHOC = ProtectedComponent => class Bondary extends Component {
+const BoundaryHOC = ProtectedComponent => class Bondary 
+
+extends Component {
     state = {
         hasError: false
     };

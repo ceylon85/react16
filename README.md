@@ -27,4 +27,4 @@
 - 캐치 할 수 있는 `component`는 `App`임
 #
 ### 4. 
-- HOC(Higher-Order-Component)
+- `HOC(Higher-Order-Component)`
