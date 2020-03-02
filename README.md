@@ -26,5 +26,8 @@
   
 - 캐치 할 수 있는 `component`는 `App`임
 #
-### 4. 
-- `HOC(Higher-Order-Component)`
+### 4. `Error Boundaries` with `HOC`
+- `HOC(Higher-Order-Component)` 원하는 모든 `component`를 보호
+#
+### 5. `this.setState(null)`
+- `return null` 을 사용하면 업데이트를 컨트롤 할 수 있음

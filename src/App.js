@@ -1,70 +1,40 @@
 import React, {Component, Fragment} from 'react';
-import {createPortal} from 'react-dom';
 
-const BoundaryHOC = ProtectedComponent => class Bondary 
+const MAX_PIZZAS = 20;
 
-extends Component {
-    state = {
-        hasError: false
-    };
-    componentDidCatch = () => {
-        this.setState({hasError: true});
-    };
-    render() {
-        const {hasError} = this.state;
-        if (hasError) {
-            return <ErrorFallback/>;
-        } else {
-            return <ProtectedComponent/>;
-        }
+const eatPizza = (state, props) => {
+    const {pizzas} = state;
+    if (pizzas < MAX_PIZZAS) {
+        return {
+            pizzas: pizzas + 1
+        };
+    } else {
+        return null;
     }
 };
 
-class ErrorMaker extends Component {
+class Controlled extends Component {
     state = {
-        friends: ["aa", "bb", "cc", "dd", "ee"]
-    };
-    componentDidMount = () => {
-        setTimeout(() => {
-            this.setState({friends: undefined});
-        }, 2000);
+        pizzas: 0
     };
     render() {
-        const {friends} = this.state;
-        return friends.map(friend => `${friend}`);
+        const {pizzas} = this.state;
+        return (
+            <button onClick={this._handleClick}>
+                {`I have eaten ${pizzas} ${pizzas === 1
+                    ? "pizza"
+                    : "pizzas"}`}
+            </button>
+        );
     }
+    _handleClick = () => {
+        this.setState(eatPizza);
+    };
 }
-
-const ProtectedErrorMaker = BoundaryHOC(ErrorMaker)
-
-class Portals extends Component {
-    render() {
-        return createPortal(
-            <Message/>, document.getElementById("touchme"));
-    }
-}
-
-const ProtectedPortals = BoundaryHOC(Portals)
-
-const Message = () => "Just touched this!!";
-
-class ReturnTypes extends Component {
-    render() {
-        return "hello ";
-    }
-}
-
-const ErrorFallback = () => "  Sorry something went wrong";
 
 class App extends Component {
     render() {
-        return (
-            <Fragment>
-                <ReturnTypes/>
-                <ProtectedPortals/>
-                <ProtectedErrorMaker/>
-            </Fragment>
-        );
+        return <Controlled/>;
     }
 }
 
